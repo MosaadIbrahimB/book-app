@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         // initialRoute: AppRoute.homeScreen,
-        // onGenerateRoute: AppRoute.onGenerateRoute,
-home: BookDetailsScreen(),
+        onGenerateRoute: AppRoute.onGenerateRoute,
+// home: BookDetailsScreen(),
       ),
     );
   }

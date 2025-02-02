@@ -22,21 +22,18 @@ class ItemBestSellerWidget extends StatelessWidget {
           Image.asset("assets/images/harry.png", width: 70.w, height: 115.h),
           SizedBox(width: 8),
           Expanded(
-            child: Container(
-              // color: Colors.red,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(AppConstrain.harry,
-                      style: theme.textTheme.displayMedium),
-                  Text(
-                    "J.K. Rowling",
-                    style: theme.textTheme.titleMedium,
-                  ),
-                  Expanded(child: SizedBox()),
-                  PriceAndRateWidget()
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(AppConstrain.harry,
+                    style: theme.textTheme.displayMedium),
+                Text(
+                  "J.K. Rowling",
+                  style: theme.textTheme.titleMedium,
+                ),
+                Expanded(child: SizedBox()),
+                PriceAndRateWidget()
+              ],
             ),
           )
         ],
