@@ -1,3 +1,4 @@
+import 'package:book_app/feature/home/presentation/widget/btn_in_screen_details_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/item_book_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/price_and_rate_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/rate_widget.dart';
@@ -28,6 +29,7 @@ class BodyBookDetailsWidget extends StatelessWidget {
     var theme = Theme.of(context).textTheme;
     return Column(
       children: [
+        //app bar
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -44,6 +46,7 @@ class BodyBookDetailsWidget extends StatelessWidget {
           ],
         ),
         SizedBox(height: 35.h),
+        //image
         ItemBookWidget(
           width: 162.w,
           height: 243.h,
@@ -59,9 +62,13 @@ class BodyBookDetailsWidget extends StatelessWidget {
           style: theme.titleMedium,
         ),
         SizedBox(height: 16.h),
+        RateWidget(),
+        SizedBox(height: 37.h),
+        BtnInScreenDetailsWidget(),
 
-        RateWidget()
       ],
     );
   }
 }
+
+
