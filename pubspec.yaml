@@ -19,7 +19,7 @@ dependencies:
   iconly: ^1.0.1
   font_awesome_flutter: ^10.6.0
   dartz: ^0.10.1
-
+  dio:
 dev_dependencies:
   flutter_test:
     sdk: flutter
