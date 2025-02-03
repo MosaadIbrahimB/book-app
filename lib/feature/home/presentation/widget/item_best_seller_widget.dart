@@ -1,6 +1,5 @@
 import 'package:book_app/core/utils/app_consrain.dart';
 import 'package:book_app/feature/home/presentation/widget/price_and_rate_widget.dart';
-import 'package:book_app/feature/home/presentation/widget/rate_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ItemBestSellerWidget extends StatelessWidget {
