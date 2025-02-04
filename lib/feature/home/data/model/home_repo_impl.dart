@@ -13,25 +13,27 @@ class HomeRepoImpl extends HomeRepo {
   HomeRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failure, List<Item>>> fetchFeatureBooks(
-    ) async {
+  Future<Either<Failure, List<Item>>> fetchFeatureBooks() async {
+    return getFunction(endPoint: ApiConstant().endpointFeatureBooks);
+  }
+
+  @override
+  Future<Either<Failure, List<Item>>> fetchSellerBooks() async {
+    return getFunction(endPoint: ApiConstant().endpointBookDetails);
+  }
+
+  Future<Either<Failure, List<Item>>> getFunction(
+      {required String endPoint}) async {
     try {
-      Map<String, dynamic> response = await apiService.get(endPoint: ApiConstant().endpointFeatureBooks);
+      Map<String, dynamic> response = await apiService.get(endPoint: endPoint);
       BookModel bookModel = BookModel.fromJson(response);
       List<Item> listBook = bookModel.items ?? [];
-
       return Right(listBook);
     } catch (e) {
-      if(e is DioException){
+      if (e is DioException) {
         return left(ServerFailure.fromDioException(dioException: e));
       }
       return left(ServerFailure(msg: e.toString()));
     }
-  }
-
-  @override
-  Future<Either<Failure, List<Item>>> fetchSellerBooks() {
-    // TODO: implement fetchSellerBooks
-    throw UnimplementedError();
   }
 }
