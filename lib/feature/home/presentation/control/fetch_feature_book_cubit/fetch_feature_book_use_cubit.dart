@@ -7,10 +7,10 @@ import 'package:dartz/dartz.dart';
 import '../../../data/model/book_model/item.dart';
 
 
-class FetchFeatureBookUseCubit extends Cubit<FetchFeatureBookState> {
+class FetchFeatureBookCubit extends Cubit<FetchFeatureBookState> {
   FetchFeatureBookUseCase featureBookUseCase;
 
-  FetchFeatureBookUseCubit(this.featureBookUseCase) : super(FetchFeatureBookInitial());
+  FetchFeatureBookCubit(this.featureBookUseCase) : super(FetchFeatureBookInitial());
 
  Future<void> fetchFeatureBook()async{
    Either<Failure,List<Item>> response=await featureBookUseCase();
