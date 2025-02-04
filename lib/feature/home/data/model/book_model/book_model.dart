@@ -17,23 +17,13 @@ class BookModel extends Equatable {
 						.toList(),
 			);
 
+
 	Map<String, dynamic> toJson() => {
 				'kind': kind,
 				'totalItems': totalItems,
 				'items': items?.map((e) => e.toJson()).toList(),
 			};
 
-	BookModel copyWith({
-		String? kind,
-		int? totalItems,
-		List<Item>? items,
-	}) {
-		return BookModel(
-			kind: kind ?? this.kind,
-			totalItems: totalItems ?? this.totalItems,
-			items: items ?? this.items,
-		);
-	}
 
 	@override
 	List<Object?> get props => [kind, totalItems, items];

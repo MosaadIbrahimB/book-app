@@ -13,13 +13,7 @@ class Epub extends Equatable {
 				'isAvailable': isAvailable,
 			};
 
-	Epub copyWith({
-		bool? isAvailable,
-	}) {
-		return Epub(
-			isAvailable: isAvailable ?? this.isAvailable,
-		);
-	}
+
 
 	@override
 	List<Object?> get props => [isAvailable];

@@ -56,27 +56,7 @@ class Item extends Equatable {
 				'searchInfo': searchInfo?.toJson(),
 			};
 
-	Item copyWith({
-		String? kind,
-		String? id,
-		String? etag,
-		String? selfLink,
-		VolumeInfo? volumeInfo,
-		SaleInfo? saleInfo,
-		AccessInfo? accessInfo,
-		SearchInfo? searchInfo,
-	}) {
-		return Item(
-			kind: kind ?? this.kind,
-			id: id ?? this.id,
-			etag: etag ?? this.etag,
-			selfLink: selfLink ?? this.selfLink,
-			volumeInfo: volumeInfo ?? this.volumeInfo,
-			saleInfo: saleInfo ?? this.saleInfo,
-			accessInfo: accessInfo ?? this.accessInfo,
-			searchInfo: searchInfo ?? this.searchInfo,
-		);
-	}
+
 
 	@override
 	List<Object?> get props {

@@ -10,11 +10,9 @@ class ItemBestSellerWidget extends StatelessWidget {
     var theme = Theme.of(context);
 
     return Container(
-      // color: Colors.red,
       margin: EdgeInsets.only(bottom: 20),
       width: 298.w,
       height: 115.h,
-
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

@@ -12,7 +12,7 @@ class FetchFeatureBookCubit extends Cubit<FetchFeatureBookState> {
 
   FetchFeatureBookCubit(this.featureBookUseCase) : super(FetchFeatureBookInitial());
 
- Future<void> fetchFeatureBook()async{
+ Future<void> getFeatureBook()async{
    Either<Failure,List<Item>> response=await featureBookUseCase();
   response.fold((failure) {
     emit(FetchFeatureBookFailure(msg: failure.msg));

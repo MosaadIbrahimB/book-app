@@ -49,34 +49,34 @@ class VolumeInfo extends Equatable {
 	});
 
 	factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
-				title: json['title'] as String?,
-				authors: json['authors'] as List<String>?,
-				publisher: json['publisher'] as String?,
-				publishedDate: json['publishedDate'] as String?,
-				description: json['description'] as String?,
-				industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
-						?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
-						.toList(),
-				readingModes: json['readingModes'] == null
-						? null
-						: ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>),
-				pageCount: json['pageCount'] as int?,
-				printType: json['printType'] as String?,
-				categories: json['categories'] as List<String>?,
-				maturityRating: json['maturityRating'] as String?,
-				allowAnonLogging: json['allowAnonLogging'] as bool?,
-				contentVersion: json['contentVersion'] as String?,
-				panelizationSummary: json['panelizationSummary'] == null
-						? null
-						: PanelizationSummary.fromJson(json['panelizationSummary'] as Map<String, dynamic>),
-				imageLinks: json['imageLinks'] == null
-						? null
-						: ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
-				language: json['language'] as String?,
-				previewLink: json['previewLink'] as String?,
-				infoLink: json['infoLink'] as String?,
-				canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
-			);
+		title: json['title'] as String?,
+		authors: (json['authors'] as List<dynamic>?)?.map((e) => e.toString()).toList(),
+		publisher: json['publisher'] as String?,
+		publishedDate: json['publishedDate'] as String?,
+		description: json['description'] as String?,
+		industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
+				?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
+				.toList(),
+		readingModes: json['readingModes'] == null
+				? null
+				: ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>),
+		pageCount: json['pageCount'] as int?,
+		printType: json['printType'] as String?,
+		categories: (json['categories'] as List<dynamic>?)?.map((e) => e.toString()).toList(),
+		maturityRating: json['maturityRating'] as String?,
+		allowAnonLogging: json['allowAnonLogging'] as bool?,
+		contentVersion: json['contentVersion'] as String?,
+		panelizationSummary: json['panelizationSummary'] == null
+				? null
+				: PanelizationSummary.fromJson(json['panelizationSummary'] as Map<String, dynamic>),
+		imageLinks: json['imageLinks'] == null
+				? null
+				: ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+		language: json['language'] as String?,
+		previewLink: json['previewLink'] as String?,
+		infoLink: json['infoLink'] as String?,
+		canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
+	);
 
 	Map<String, dynamic> toJson() => {
 				'title': title,
@@ -100,49 +100,7 @@ class VolumeInfo extends Equatable {
 				'canonicalVolumeLink': canonicalVolumeLink,
 			};
 
-	VolumeInfo copyWith({
-		String? title,
-		List<String>? authors,
-		String? publisher,
-		String? publishedDate,
-		String? description,
-		List<IndustryIdentifier>? industryIdentifiers,
-		ReadingModes? readingModes,
-		int? pageCount,
-		String? printType,
-		List<String>? categories,
-		String? maturityRating,
-		bool? allowAnonLogging,
-		String? contentVersion,
-		PanelizationSummary? panelizationSummary,
-		ImageLinks? imageLinks,
-		String? language,
-		String? previewLink,
-		String? infoLink,
-		String? canonicalVolumeLink,
-	}) {
-		return VolumeInfo(
-			title: title ?? this.title,
-			authors: authors ?? this.authors,
-			publisher: publisher ?? this.publisher,
-			publishedDate: publishedDate ?? this.publishedDate,
-			description: description ?? this.description,
-			industryIdentifiers: industryIdentifiers ?? this.industryIdentifiers,
-			readingModes: readingModes ?? this.readingModes,
-			pageCount: pageCount ?? this.pageCount,
-			printType: printType ?? this.printType,
-			categories: categories ?? this.categories,
-			maturityRating: maturityRating ?? this.maturityRating,
-			allowAnonLogging: allowAnonLogging ?? this.allowAnonLogging,
-			contentVersion: contentVersion ?? this.contentVersion,
-			panelizationSummary: panelizationSummary ?? this.panelizationSummary,
-			imageLinks: imageLinks ?? this.imageLinks,
-			language: language ?? this.language,
-			previewLink: previewLink ?? this.previewLink,
-			infoLink: infoLink ?? this.infoLink,
-			canonicalVolumeLink: canonicalVolumeLink ?? this.canonicalVolumeLink,
-		);
-	}
+
 
 	@override
 	List<Object?> get props {

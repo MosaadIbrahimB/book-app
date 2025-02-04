@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => FetchFeatureBookCubit(getIt<FetchFeatureBookUseCase>())),
-          BlocProvider(create: (context) => FetchSellerBooksCubit(getIt<FetchSellerBooksUseCase>())),
+          BlocProvider(create: (context) => FetchFeatureBookCubit(getIt<FetchFeatureBookUseCase>())..getFeatureBook()),
+          BlocProvider(create: (context) => FetchSellerBooksCubit(getIt<FetchSellerBooksUseCase>())..getSellerBook()),
         ],
         child: MaterialApp(
           darkTheme: AppTheme.darkTheme,
