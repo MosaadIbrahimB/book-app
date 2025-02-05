@@ -3,6 +3,7 @@ import 'package:book_app/core/widget/failure_widget.dart';
 import 'package:book_app/core/widget/loading_widget.dart';
 import 'package:book_app/core/widget/succeed_widget.dart';
 import 'package:book_app/feature/home/data/model/book_model/item.dart';
+import 'package:book_app/feature/home/presentation/control/fetch_feature_book_cubit/fetch_feature_book_use_cubit.dart';
 import 'package:book_app/feature/home/presentation/control/fetch_seller_books_cubit/fetch_seller_books_cubit.dart';
 import 'package:book_app/feature/home/presentation/control/fetch_seller_books_cubit/fetch_seller_books_state.dart';
 import 'package:book_app/feature/home/presentation/widget/item_best_seller_widget.dart';
@@ -57,13 +58,16 @@ class ListBestSellerWidget extends StatelessWidget {
         if (state is FetchSellerBooksSucceed) {
           List<Item> list = state.bookList;
           return SliverList.builder(
-            itemCount: 5,
+
+            itemCount: list.length,
             itemBuilder: (context, index) {
               return InkWell(
                   onTap: () {
+                    FetchFeatureBookCubit.get(context).getChangeItem(list[index]);
                     Navigator.pushNamed(context, AppRoute.bookDetailsScreen);
                   },
-                  child: ItemBestSellerWidget());
+                  child: ItemBestSellerWidget(item: list[index],));
+
             },
           );
         }
@@ -76,16 +80,6 @@ class ListBestSellerWidget extends StatelessWidget {
 
 
 
-        return SliverList.builder(
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRoute.bookDetailsScreen);
-                },
-                child: ItemBestSellerWidget());
-          },
-        );
       },
     );
   }

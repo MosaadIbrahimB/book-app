@@ -1,3 +1,4 @@
+import 'package:book_app/feature/home/data/model/book_model/item.dart';
 import 'package:book_app/feature/home/presentation/widget/app_bar_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/btn_in_screen_details_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/image_and_title_Book_widget.dart';

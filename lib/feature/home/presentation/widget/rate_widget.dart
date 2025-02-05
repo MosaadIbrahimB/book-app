@@ -1,8 +1,11 @@
+import 'package:book_app/feature/home/data/rate_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class RateWidget extends StatelessWidget {
-  const RateWidget({super.key});
+
+ final RateModel ?rateModel;
+  const RateWidget({super.key, this.rateModel});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +18,15 @@ class RateWidget extends StatelessWidget {
           color: Color(0xffFFDD4F),
         ),
         SizedBox(width: 6.3.w),
-        Text("4.8"),
+        rateModel?.rate==null?  Text("4.8"): Text(rateModel!.rate.toString()),
         SizedBox(width: 5.w),
-        Text(
+        rateModel?.  count==null? Text(
           "(2390)",
           style: TextStyle(color: Colors.grey),
-        ),
+        ):Text(
+         "(${ rateModel?.count})",
+         style: TextStyle(color: Colors.grey),
+       ),
       ],
     );
   }
