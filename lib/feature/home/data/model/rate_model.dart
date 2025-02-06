@@ -1,6 +1,6 @@
 class RateModel{
-  final int ?rate;
-  final int ?count;
+  final num ?rate;
+  final num ?count;
 
   RateModel({this.rate, this.count});
 }

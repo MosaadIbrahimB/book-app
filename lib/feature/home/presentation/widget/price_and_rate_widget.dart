@@ -1,4 +1,4 @@
-import 'package:book_app/feature/home/data/rate_model.dart';
+import 'package:book_app/feature/home/data/model/rate_model.dart';
 import 'package:book_app/feature/home/presentation/widget/rate_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,9 +11,9 @@ final  RateModel ? rateModel;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width*.6,
+    return Container(
       // color: Colors.red,
+      width: MediaQuery.of(context).size.width*.7,
       child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
         // mainAxisSize: MainAxisSize.min,

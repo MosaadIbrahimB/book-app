@@ -1,3 +1,4 @@
+import 'package:book_app/feature/home/data/model/rate_model.dart';
 import 'package:book_app/feature/home/presentation/widget/item_book_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/rate_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,9 @@ class ImageAndTitleBookWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context).textTheme;
     Item? item=FetchFeatureBookCubit.get(context).item;
+    var info=item?.volumeInfo;
+    RateModel rateModel=RateModel(rate:info?.averageRating??0 ,count:info?.ratingsCount??0 );
+
     return Column(
       children: [
         ItemBookWidget(
@@ -37,7 +41,7 @@ class ImageAndTitleBookWidget extends StatelessWidget {
           style: theme.titleMedium,
         ),
         SizedBox(height: 16.h),
-        RateWidget(),
+        RateWidget(rateModel: rateModel,),
       ],
     );
   }

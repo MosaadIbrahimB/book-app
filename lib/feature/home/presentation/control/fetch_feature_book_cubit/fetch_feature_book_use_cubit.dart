@@ -26,7 +26,7 @@ class FetchFeatureBookCubit extends Cubit<FetchFeatureBookState> {
 
   getChangeItem(Item newItem){
    item=newItem;
-   // emit(FetchFeatureBookInitial());
+   emit(FetchLikeBookSucceed(bookList: []));
   }
 
 

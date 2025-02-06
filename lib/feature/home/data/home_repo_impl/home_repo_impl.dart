@@ -3,7 +3,7 @@ import 'package:book_app/core/error/server_failure.dart';
 import 'package:book_app/core/utils/api_service.dart';
 import 'package:book_app/feature/home/data/model/book_model/book_model.dart';
 import 'package:book_app/feature/home/data/model/book_model/item.dart';
-import 'package:book_app/feature/home/domain/home_repo.dart';
+import 'package:book_app/feature/home/domain/home_repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 

@@ -1,6 +1,6 @@
 import 'package:book_app/core/utils/api_service.dart';
-import 'package:book_app/feature/home/data/model/home_repo_impl.dart';
-import 'package:book_app/feature/home/domain/home_repo.dart';
+import 'package:book_app/feature/home/data/home_repo_impl/home_repo_impl.dart';
+import 'package:book_app/feature/home/domain/home_repo/home_repo.dart';
 import 'package:book_app/feature/home/domain/use_case/fetch_feature_book_use_case.dart';
 import 'package:book_app/feature/home/domain/use_case/fetch_seller_books_use_case.dart';
 import 'package:dio/dio.dart';

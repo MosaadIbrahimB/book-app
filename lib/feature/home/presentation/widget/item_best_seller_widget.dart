@@ -1,5 +1,6 @@
 import 'package:book_app/core/utils/app_consrain.dart';
 import 'package:book_app/feature/home/data/model/book_model/item.dart';
+import 'package:book_app/feature/home/data/model/rate_model.dart';
 import 'package:book_app/feature/home/presentation/widget/price_and_rate_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class ItemBestSellerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var info = item!.volumeInfo;
+   RateModel rateModel=RateModel(rate:info?.averageRating??0 ,count:info?.ratingsCount??0 );
     return Container(
       // color: Colors.red,
       margin: EdgeInsets.only(bottom: 20.h),
@@ -41,12 +43,19 @@ class ItemBestSellerWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 5.h),
-              Text(
-                info.authors![0] ,
-                style: theme.textTheme.titleMedium,
+
+              SizedBox(
+                width: MediaQuery.of(context).size.width*.75,
+                child: Text(
+                  info.authors![0] ,
+                  style: theme.textTheme.titleMedium,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  softWrap: true,
+                ),
               ),
               Expanded(child: SizedBox()),
-              PriceAndRateWidget()
+              PriceAndRateWidget(rateModel: rateModel)
             ],
           )
         ],

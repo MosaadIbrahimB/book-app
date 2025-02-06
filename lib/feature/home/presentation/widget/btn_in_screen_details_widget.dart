@@ -8,10 +8,10 @@ class BtnInScreenDetailsWidget extends StatelessWidget {
     return Row(
       children: [
         BtnPriceFreeViewWidget(
-          data: "19.99€",
+          data: "Free",
         ),
         BtnPriceFreeViewWidget(
-          data: "Free preview",
+          data: "Preview",
           isRight: true,
           colorBack: Color(0xffEF8262),
           colorFont: Colors.white,

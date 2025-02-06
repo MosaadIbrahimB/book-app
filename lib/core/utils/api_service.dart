@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 class ApiConstant{
   final String baseUrl='https://www.googleapis.com/books/v1/';
   final String endpointFeatureBooks='volumes?Filtering=free-ebooks&q=programming';
-  final String endpointBookDetails='volumes?q=programming';
+  final String endpointBookDetails='volumes?q=computer science';
 
 }
 class ApiService{

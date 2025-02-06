@@ -14,3 +14,8 @@ final class FetchFeatureBookSucceed extends FetchFeatureBookState {
   List<Item>bookList;
   FetchFeatureBookSucceed({required this.bookList});
 }
+
+final class FetchLikeBookSucceed extends FetchFeatureBookState {
+  List<Item>bookList;
+  FetchLikeBookSucceed({required this.bookList});
+}
