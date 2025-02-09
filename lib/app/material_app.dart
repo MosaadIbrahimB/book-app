@@ -1,3 +1,4 @@
+import 'package:book_app/config/route/app_go_router.dart';
 import 'package:book_app/core/depend_ingect/get_it.dart';
 import 'package:book_app/core/utils/app_theme.dart';
 import 'package:book_app/feature/home/domain/use_case/fetch_feature_book_use_case.dart';
@@ -8,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../config/route/app_route.dart';
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -21,16 +21,28 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => FetchFeatureBookCubit(getIt<FetchFeatureBookUseCase>())..getFeatureBook()),
-          BlocProvider(create: (context) => FetchSellerBooksCubit(getIt<FetchSellerBooksUseCase>())..getSellerBook()),
+          BlocProvider(
+              create: (context) =>
+                  FetchFeatureBookCubit(getIt<FetchFeatureBookUseCase>())
+                    ..getFeatureBook()),
+          BlocProvider(
+              create: (context) =>
+                  FetchSellerBooksCubit(getIt<FetchSellerBooksUseCase>())
+                    ..getSellerBook()),
         ],
-        child: MaterialApp(
+        // child: MaterialApp(
+        //   darkTheme: AppTheme.darkTheme,
+        //   themeMode: ThemeMode.dark,
+        //   debugShowCheckedModeBanner: false,
+        //   // initialRoute: AppRoute.homeScreen,
+        //   onGenerateRoute: AppRoute.onGenerateRoute,
+        // // home: BookDetailsScreen(),
+        // ),
+        child: MaterialApp.router(
           darkTheme: AppTheme.darkTheme,
           themeMode: ThemeMode.dark,
           debugShowCheckedModeBanner: false,
-          // initialRoute: AppRoute.homeScreen,
-          onGenerateRoute: AppRoute.onGenerateRoute,
-        // home: BookDetailsScreen(),
+          routerConfig: AppGoRouter.router,
         ),
       ),
     );

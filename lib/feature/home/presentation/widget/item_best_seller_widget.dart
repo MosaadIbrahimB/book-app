@@ -16,6 +16,9 @@ class ItemBestSellerWidget extends StatelessWidget {
     var theme = Theme.of(context);
     var info = item!.volumeInfo;
    RateModel rateModel=RateModel(rate:info?.averageRating??0 ,count:info?.ratingsCount??0 );
+
+ 
+
     return Container(
       // color: Colors.red,
       margin: EdgeInsets.only(bottom: 20.h),

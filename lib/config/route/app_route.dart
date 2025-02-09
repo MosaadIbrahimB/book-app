@@ -16,7 +16,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const HomeScreen());
 
       case bookDetailsScreen:
-        return MaterialPageRoute(builder: (context) => const BookDetailsScreen());
+        return MaterialPageRoute(
+            builder: (context) => const BookDetailsScreen());
 
       default:
         return _defaultRout();
@@ -25,13 +26,14 @@ class AppRoute {
 
   static _defaultRout() {
     return MaterialPageRoute(
-        builder: (context) => const Scaffold(
-              body: Center(
-                child: Text(
-                  "Default Screen",
-                  style: TextStyle(fontSize: 28),
-                ),
-              ),
-            ));
+      builder: (context) => const Scaffold(
+        body: Center(
+          child: Text(
+            "Default Screen",
+            style: TextStyle(fontSize: 28),
+          ),
+        ),
+      ),
+    );
   }
 }

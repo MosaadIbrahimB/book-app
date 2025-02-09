@@ -1,4 +1,3 @@
-import 'package:book_app/feature/home/presentation/widget/bottom_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/home_body_widget.dart';
 import 'package:flutter/material.dart';
 

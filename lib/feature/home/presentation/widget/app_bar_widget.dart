@@ -1,6 +1,7 @@
 import 'package:book_app/config/route/app_route.dart';
 import 'package:book_app/feature/home/presentation/control/fetch_feature_book_cubit/fetch_feature_book_use_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key});
@@ -12,7 +13,7 @@ class AppBarWidget extends StatelessWidget {
       children: [
         IconButton(
           onPressed: (){
-            Navigator.pop(context);
+            context.pop();
             FetchFeatureBookCubit.get(context).getFeatureBook();
           },
           icon: Icon(

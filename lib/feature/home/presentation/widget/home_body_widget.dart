@@ -7,6 +7,7 @@ import 'package:book_app/feature/home/presentation/control/fetch_feature_book_cu
 import 'package:book_app/feature/home/presentation/control/fetch_seller_books_cubit/fetch_seller_books_cubit.dart';
 import 'package:book_app/feature/home/presentation/control/fetch_seller_books_cubit/fetch_seller_books_state.dart';
 import 'package:book_app/feature/home/presentation/widget/item_best_seller_widget.dart';
+import 'package:book_app/feature/home/presentation/widget/list_best_seller_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/list_feature_book_widget.dart';
 import 'package:book_app/feature/home/presentation/widget/search_bar_widget.dart';
 import 'package:flutter/material.dart';
@@ -45,44 +46,5 @@ class HomeBodyWidget extends StatelessWidget {
   }
 }
 
-class ListBestSellerWidget extends StatelessWidget {
-  const ListBestSellerWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<FetchSellerBooksCubit, FetchSellerBooksState>(
-      builder: (context, state) {
-
-        if (state is FetchSellerBooksSucceed) {
-          List<Item> list = state.bookList;
-          return SliverList.builder(
-
-            itemCount: list.length,
-            itemBuilder: (context, index) {
-              return InkWell(
-                  onTap: () {
-                    FetchFeatureBookCubit.get(context).getChangeItem(list[index]);
-                    Navigator.pushNamed(context, AppRoute.bookDetailsScreen);
-                  },
-                  child: ItemBestSellerWidget(item: list[index],));
-
-            },
-          );
-        }
-        if (state is FetchSellerBooksFailure) {
-          return SliverToBoxAdapter(child: FailureWidget(msg: state.msg));
-        }
-        return SliverToBoxAdapter(child: LoadingWidget());
-
-
-
-
-
-      },
-    );
-  }
-}
 
 

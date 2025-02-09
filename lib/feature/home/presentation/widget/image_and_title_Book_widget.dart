@@ -16,32 +16,33 @@ class ImageAndTitleBookWidget extends StatelessWidget {
     Item? item=FetchFeatureBookCubit.get(context).item;
     var info=item?.volumeInfo;
     RateModel rateModel=RateModel(rate:info?.averageRating??0 ,count:info?.ratingsCount??0 );
+    print(item?.volumeInfo?.imageLinks?.thumbnail);
 
     return Column(
       children: [
         ItemBookWidget(
           width: 162.w,
           height: 243.h,
-          imgUrl: item?.volumeInfo?.imageLinks?.thumbnail,
+          imgUrl: item?.volumeInfo?.imageLinks?.thumbnail??"https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
         ),
         SizedBox(height: 30.h),
         Text(
-          item!.volumeInfo!.title?? "The Jungle Book",
+          item?.volumeInfo?.title?? "The Jungle Book",
           style: theme.displayLarge!.copyWith(fontSize: 20),
           textAlign:TextAlign.center ,
         ),
         SizedBox(height: 6.h),
-        item.volumeInfo!.authors![0].isEmpty?
+        item?.volumeInfo?.authors?[0]==null?
         Text(
           "authors",
           style: theme.titleMedium,
         ):
         Text(
-          item.volumeInfo!.authors![0],
+          item!.volumeInfo!.authors![0],
           style: theme.titleMedium,
         ),
         SizedBox(height: 16.h),
-        RateWidget(rateModel: rateModel,),
+        RateWidget(rateModel: rateModel),
       ],
     );
   }

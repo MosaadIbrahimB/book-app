@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:book_app/config/route/app_go_router.dart';
 import 'package:book_app/config/route/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -71,11 +73,12 @@ class _SplashScreenState extends State<SplashScreen>
       ),
       () {
         if (mounted) {
-          Navigator.pushNamedAndRemoveUntil(
-            context,
-            AppRoute.homeScreen,
-            (route) => false,
-          );
+          // Navigator.pushNamedAndRemoveUntil(
+          //   context,
+          //   AppRoute.homeScreen,
+          //   (route) => false,
+          // );
+        context.go(AppGoRouter.homeScreen);
         }
       },
     );
